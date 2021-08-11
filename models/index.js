@@ -7,19 +7,23 @@ class Server{
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
+
+        this.userPath = "/api/user";
+        this.middlewares();
         this.routes();
     }
     middlewares() {
         
         this.app.use(cors());
+        this.app.use(express.json());
+        
+        
     }
 
 
     routes() {
         
-        this.app.get('/', (req, res) => {
-            res.send({ hi: "there" });
-        });
+        this.app.use(this.userPath, require('../routes/UserRoutes/index'));
     }
 
 
