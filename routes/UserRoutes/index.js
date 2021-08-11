@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 
-const { newUser } = require('../../controller/UserController/index');
+const { newUser,getUserById  } = require('../../controller/UserController/index');
 
 const router = Router();
 
@@ -11,6 +11,7 @@ const router = Router();
 
 router.post("/", [], newUser);
 
+router.get("/:id",getUserById )
 //router.put("/:id", [], modifyUser);
 
 
