@@ -11,7 +11,7 @@ const router = Router();
 
 router.post("/", [], newUser);
 
-router.get("/:id",getUserById )
+router.get("/:email",getUserById )
 //router.put("/:id", [], modifyUser);
 
 
