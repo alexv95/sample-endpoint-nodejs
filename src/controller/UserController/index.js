@@ -6,15 +6,20 @@ const { contextsKey } = require("express-validator/src/base");
 
 const newUser = async (req = request, res = response) => {
     const { firstname, lastname, email } = req.body;
-    await user.newUser({ firstname, lastname, email });
-    res.json({firstname});
+    
+    const result = await user.newUser({ firstname, lastname, email });
+    return res.json(result);
+
+
+
+
 }
 
 
 const getUserById =async (req = request, res = response) => {
     const { email } = req.params;
-    const response =await user.getUserByEmail(email);
-    res.json(response);
+    return res.json(await user.getUserByEmail(email));
+
 }
 
 

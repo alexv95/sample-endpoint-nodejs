@@ -3,7 +3,7 @@
 
 const dotenv = require('dotenv').config();
 
-const Server = require('./src/models/index');
+const Server = require('./src/core/index');
 
 const server = new Server();
 
