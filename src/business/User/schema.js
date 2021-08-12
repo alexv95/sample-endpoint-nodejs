@@ -11,4 +11,4 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports=model("UserSchema",UserSchema);
+module.exports=model("User",UserSchema);
